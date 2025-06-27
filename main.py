@@ -33,38 +33,52 @@ loadflashcards()
 import random
 random.shuffle(flashcards)
 
-quit_flag = False
 user_score = 0
 
-
-print("Press q to end the session or s to skip a card")
-for card in flashcards:
-    while True:
-        print(card.getquestion())
-        answer = input().strip().lower()
-            
-        if answer == card.getanswer().strip().lower():
-            user_score += card.getscore()
-            print("Correct! Your current score is:", user_score)
-            break  # move to next card
-            
-        elif answer == 'q':
-            quit_flag = True
-            break
-            
-        elif answer == 's':
-            print("Skipped! The answer was", card.getanswer())
-            print("Current score is:", user_score)
-            break
-            
-        else:
-            card.attempts += 1
-            card.score = max(card.score - 1, 0)
-            print("Wrong answer. Try again, or type 's' to skip, 'q' to quit.")
-        
-    if quit_flag:
-        break
-
+def quiz(set,user_score):
+    quit_flag = False
+    cards_skipped = 0
+    cards_won = 0
+    skipped = []
     
+    print("Press q to end the session or s to skip a card")
+    for card in set:
+        while True:
+            print(card.getquestion())
+            answer = input().strip().lower()
+            
+            if answer == card.getanswer().strip().lower():
+                user_score += card.getscore()
+                print("Correct! Your current score is:", user_score)
+                cards_won += 1
+                break  # move to next card
+            
+            elif answer == 'q':
+                quit_flag = True
+                break
+            
+            elif answer == 's':
+                print("Skipped! The answer was", card.getanswer())
+                print("Current score is:", user_score)
+                cards_skipped += 1
+                skipped.append(card)
+                break
+            
+            else:
+                card.attempts += 1
+                card.score = max(card.score - 1, 0)
+                print("Wrong answer. Try again, or type 's' to skip, 'q' to quit.")
+        
+            if quit_flag:
+                break
+            
+        if quit_flag:
+            break
+        
+    return user_score, cards_won, cards_skipped
+
+user_score, cards_won, cards_skipped = quiz(flashcards,user_score)    
 print("That's the end!! Your final score is ", user_score)
+print("You got",cards_won,"cards correct while skipping",cards_skipped,"cards.")
+
         
