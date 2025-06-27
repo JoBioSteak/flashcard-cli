@@ -48,3 +48,10 @@ Further research indicated that a simple NLP model won’t fully capture the nua
 I'll use a pre-trained model given how small and rather simple my dataset is (Not because my laptop is kinda bad so building and training my own would set it on fire :3)
 
 **Side note: All AI experimentation will be on its own separate branch and merged later on**
+
+spaCy was a common choice for similar problems. I'll go with it and keep track of some issues that may arise later on. Off the top of my head, here are some things that might go wrong:
+1) short answers (1-2 words) might mess things up
+2) words similar in theory might get a pass, e.g. "sugar" gets points when the answer is "deoxyribose"
+3) very specific jargon might get mixed up (stuff like phosphodiester bonds or michaelis menten come to mind)
+
+Regardless, I'll have to start somewhere.
