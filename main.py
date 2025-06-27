@@ -75,10 +75,25 @@ def quiz(set,user_score):
         if quit_flag:
             break
         
-    return user_score, cards_won, cards_skipped
+    return user_score, cards_won, cards_skipped, skipped
 
-user_score, cards_won, cards_skipped = quiz(flashcards,user_score)    
+user_score, cards_won, cards_skipped,skipped = quiz(flashcards,user_score)    
+
+while cards_skipped > 0:
+        redo = input("Redo skipped cards? y/n: ").strip().lower()
+        if redo == 'n':
+            print("Thanks for using this app!")
+            break
+        elif redo == 'y':
+            user_score, cards_won, cards_skipped, skipped = quiz(skipped, user_score)
+            break
+        else:
+            print("Invalid input, please type y or n.")
+            
 print("That's the end!! Your final score is ", user_score)
 print("You got",cards_won,"cards correct while skipping",cards_skipped,"cards.")
+
+
+
 
         
