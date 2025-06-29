@@ -2,261 +2,313 @@
     {
         "Question": "What is the basic building block of proteins?",
         "Answer": "Amino acids",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What molecule is the main energy currency of the cell?",
         "Answer": "ATP",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What sugar is found in RNA?",
         "Answer": "Ribose",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What sugar is found in DNA?",
         "Answer": "Deoxyribose",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the pH of pure water?",
         "Answer": "7",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which organelle is responsible for protein synthesis?",
         "Answer": "Ribosome",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What kind of bond connects amino acids?",
         "Answer": "Peptide bond",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What does DNA stand for?",
         "Answer": "Deoxyribonucleic acid",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which vitamin is also known as ascorbic acid?",
         "Answer": "Vitamin C",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which macromolecule group do enzymes belong to?",
         "Answer": "Proteins",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the simplest carbohydrate?",
         "Answer": "Monosaccharide",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the process of breaking down glucose called?",
         "Answer": "Glycolysis",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which element is central to organic molecules?",
         "Answer": "Carbon",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which nitrogenous base is only found in RNA?",
         "Answer": "Uracil",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What color does Benedict's test turn for reducing sugars?",
         "Answer": "Orange/red",
-        "Score": "1"
+        "Score": "1",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the shape of a double-stranded DNA molecule?",
         "Answer": "Double helix",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which molecule carries amino acids to the ribosome?",
         "Answer": "tRNA",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What are the products of aerobic respiration?",
         "Answer": "CO\u2082, H\u2082O and ATP",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the primary structure of a protein?",
         "Answer": "Sequence of amino acids",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What enzyme breaks down starch into maltose?",
         "Answer": "Amylase",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the main lipid component of cell membranes?",
         "Answer": "Phospholipids",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which process converts RNA to protein?",
         "Answer": "Translation",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is a coenzyme?",
         "Answer": "An organic molecule that assists enzymes",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the role of NAD\u207a in metabolism?",
         "Answer": "Electron carrier",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Where does the Krebs cycle occur?",
         "Answer": "Mitochondrial matrix",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the function of helicase?",
         "Answer": "Unwinds DNA strands",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What does PCR stand for?",
         "Answer": "Polymerase Chain Reaction",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which bond holds DNA base pairs together?",
         "Answer": "Hydrogen bonds",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which level of protein structure involves alpha helices?",
         "Answer": "Secondary structure",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is allosteric regulation?",
         "Answer": "Regulation at a site other than active site",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What does SDS-PAGE separate proteins by?",
         "Answer": "Molecular weight",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which protein structure is disrupted by heat?",
         "Answer": "Tertiary structure",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is an isozyme?",
         "Answer": "Enzyme variant with the same function",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which vitamin is essential for blood clotting?",
         "Answer": "Vitamin K",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which organ detoxifies ammonia via urea?",
         "Answer": "Liver",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is a zymogen?",
         "Answer": "Inactive enzyme precursor",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "Which DNA polymerase is used in PCR?",
         "Answer": "Taq polymerase",
-        "Score": "2"
+        "Score": "2",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is Km in Michaelis-Menten kinetics?",
         "Answer": "Substrate concentration at \u00bd Vmax",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the central dogma of molecular biology?",
         "Answer": "DNA \u2192 RNA \u2192 Protein",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "How many ATP are generated per glucose in aerobic respiration?",
         "Answer": "~30\u201332 ATP",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the difference between competitive and non-competitive inhibition?",
         "Answer": "Binding site location and effect on Vmax/Km",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is an operon?",
         "Answer": "Cluster of genes under one promoter",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the significance of the R group in amino acids?",
         "Answer": "Determines chemical properties",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "How does a buffer resist pH change?",
         "Answer": "Absorbs excess H+ or OH-",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is post-translational modification?",
         "Answer": "Chemical changes to proteins after translation",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What are the 3 phases of glycolysis?",
         "Answer": "Investment, cleavage, payoff",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the function of the Golgi apparatus?",
         "Answer": "Modifies and ships proteins",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the function of telomerase?",
         "Answer": "Extends telomeres in DNA replication",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What does \"amphipathic\" mean?",
         "Answer": "Having both hydrophilic and hydrophobic parts",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the Warburg effect?",
         "Answer": "Cancer cells favor glycolysis even with oxygen",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is the function of RNA polymerase?",
         "Answer": "Synthesizes RNA from DNA template",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     },
     {
         "Question": "What is a prion?",
         "Answer": "Infectious misfolded protein",
-        "Score": "3"
+        "Score": "3",
+        "Category": "Biochemistry"
     }
 ]
