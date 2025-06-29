@@ -13,13 +13,13 @@ class Flashcard:
         return self.score
     
     
-import csv
+import json
 flashcards = []
 def loadflashcards():
     try:
-        with open('flashcard.csv','r') as csvfile:
-            csv_reader = csv.DictReader(csvfile)
-            for row in csv_reader:
+        with open('flashcard.json','r') as jsonfile:
+            json_reader = json.load(jsonfile)
+            for row in json_reader:
                 q = row["Question"]
                 a = row["Answer"]
                 s = row["Score"]
@@ -95,5 +95,3 @@ print("You got",cards_won,"cards correct while skipping",cards_skipped,"cards.")
 
 
 
-
-        
