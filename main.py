@@ -29,6 +29,10 @@ def loadflashcards():
         return
     
     
+import spacy
+nlp = spacy.load("en_core_web_lg")
+
+    
 loadflashcards()
 import random
 random.shuffle(flashcards)
@@ -44,16 +48,20 @@ def quiz(set,user_score):
     print("Press q to end the session or s to skip a card")
     for card in set:
         while True:
+            correct_answer = card.getanswer().strip().lower()
             print(card.getquestion())
             answer = input().strip().lower()
             
-            if answer == card.getanswer().strip().lower():
+            Ua = nlp(answer)
+            Ca = nlp(correct_answer)
+            
+            if Ua.similarity(Ca) >= 0.75:
                 user_score += card.getscore()
                 print("Correct! Your current score is:", user_score)
                 cards_won += 1
-                break  # move to next card
+                break  
             
-            elif answer == 'q':
+            elif answer == 'q': 
                 quit_flag = True
                 break
             

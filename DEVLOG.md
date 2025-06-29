@@ -55,3 +55,14 @@ spaCy was a common choice for similar problems. I'll go with it and keep track o
 3) very specific jargon might get mixed up (stuff like phosphodiester bonds or michaelis menten come to mind)
 
 Regardless, I'll have to start somewhere.
+
+
+29/06/2025
+
+Changed the flashcard file format to .json and added the "Category" heading. This is some nice future proofing and will let me be more flexible with future programming. 
+
+I also implemented the NLP with the "en_core_web_lg" model. It fixed a lot of the issues I was talking about but here's some things I'm noticing:
+1) If the user extends their answer, like saying "The enzyme is [correct answer]", it is still treated as incorrect
+2) It doesn't seem to understand that carbon dioxide and water are the same as the molecular formulae
+
+Right now, I have the similarity check set to 0.75. Further adjusting is clearly needed but I'm liking the results so far.
