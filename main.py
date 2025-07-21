@@ -1,3 +1,40 @@
+import tkinter as tk
+#make class in case i need more than one window
+class App(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        #creating all the widgets
+        self.current_card = 0
+        self.user_score = 0
+        self.question_label = tk.Label(self,text="")
+        self.answer_entry = tk.Entry(self)
+        self.submit_button = tk.Button(self,text="Submit",command=self.submit_answer)
+        self.skip_button = tk.Button(self,text="Skip",command = self.skip_card)
+        self.score_label = tk.Label(self,text="Socre: 0")
+        
+        #organising them so they look pretty pretty
+        self.question_label.grid(row=0, column=0, columnspan=2, pady=10)
+        self.answer_entry.grid(row=1, column=0, columnspan=2, pady=10)
+        self.submit_button.grid(row=2, column=0, padx=5, pady=10)
+        self.skip_button.grid(row=2, column=1, padx=5, pady=10)
+        self.score_label.grid(row=3, column=0, columnspan=2, pady=10)
+               
+    def submit_answer(self):
+        pass
+           
+    def skip_card(self):
+        pass
+    
+    
+    
+        
+    
+main_w = App()
+main_w.attributes('-fullscreen',True)
+
+main_w.mainloop()
+
+
 class Flashcard:
     def __init__(self, questionP,answerP,scoreP):
         self.question = questionP
@@ -38,6 +75,8 @@ import random
 random.shuffle(flashcards)
 
 user_score = 0
+
+
 
 def quiz(set,user_score):
     quit_flag = False

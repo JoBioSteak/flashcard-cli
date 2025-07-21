@@ -66,3 +66,13 @@ I also implemented the NLP with the "en_core_web_lg" model. It fixed a lot of th
 2) It doesn't seem to understand that carbon dioxide and water are the same as the molecular formulae
 
 Right now, I have the similarity check set to 0.75. Further adjusting is clearly needed but I'm liking the results so far.
+
+
+15/07/2025
+......That was a longer break than I attended. Procrastination/general disenchantment with coding is one hell of a demotivator. I'm back and ready to make my dreams come true!
+Right now, that's making a nice GUI for the project instead of using the command line for everything. I've heard good things about tkinter so that's what I'll be going with. The basics will just include:
+1) input box for answer + output box for questions
+2) score + flashcard (skipped and remaining) tracker
+3) category selector (only have biochem for now but future proofing and such) button
+4) buttons to skip question, retry question, end quiz, redo skipped questions
+I think that's it for now. Well then, time to learn how to code with tkinter!
