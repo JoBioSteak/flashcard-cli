@@ -1,39 +1,4 @@
 import tkinter as tk
-#make class in case i need more than one window
-class App(tk.Tk):
-    def __init__(self):
-        super().__init__()
-        #creating all the widgets
-        self.current_card = 0
-        self.user_score = 0
-        self.question_label = tk.Label(self,text="")
-        self.answer_entry = tk.Entry(self)
-        self.submit_button = tk.Button(self,text="Submit",command=self.submit_answer)
-        self.skip_button = tk.Button(self,text="Skip",command = self.skip_card)
-        self.score_label = tk.Label(self,text="Socre: 0")
-        
-        #organising them so they look pretty pretty
-        self.question_label.grid(row=0, column=0, columnspan=2, pady=10)
-        self.answer_entry.grid(row=1, column=0, columnspan=2, pady=10)
-        self.submit_button.grid(row=2, column=0, padx=5, pady=10)
-        self.skip_button.grid(row=2, column=1, padx=5, pady=10)
-        self.score_label.grid(row=3, column=0, columnspan=2, pady=10)
-               
-    def submit_answer(self):
-        pass
-           
-    def skip_card(self):
-        pass
-    
-    
-    
-        
-    
-main_w = App()
-main_w.attributes('-fullscreen',True)
-
-main_w.mainloop()
-
 
 class Flashcard:
     def __init__(self, questionP,answerP,scoreP):
@@ -52,6 +17,7 @@ class Flashcard:
     
 import json
 flashcards = []
+skipped_cards = []
 def loadflashcards():
     try:
         with open('flashcard.json','r') as jsonfile:
@@ -68,77 +34,128 @@ def loadflashcards():
     
 import spacy
 nlp = spacy.load("en_core_web_lg")
-
-    
 loadflashcards()
 import random
 random.shuffle(flashcards)
 
-user_score = 0
 
-
-
-def quiz(set,user_score):
-    quit_flag = False
-    cards_skipped = 0
-    cards_won = 0
-    skipped = []
-    
-    print("Press q to end the session or s to skip a card")
-    for card in set:
-        while True:
-            correct_answer = card.getanswer().strip().lower()
-            print(card.getquestion())
-            answer = input().strip().lower()
-            
-            Ua = nlp(answer)
-            Ca = nlp(correct_answer)
-            
-            if Ua.similarity(Ca) >= 0.75:
-                user_score += card.getscore()
-                print("Correct! Your current score is:", user_score)
-                cards_won += 1
-                break  
-            
-            elif answer == 'q': 
-                quit_flag = True
-                break
-            
-            elif answer == 's':
-                print("Skipped! The answer was", card.getanswer())
-                print("Current score is:", user_score)
-                cards_skipped += 1
-                skipped.append(card)
-                break
-            
-            else:
-                card.attempts += 1
-                card.score = max(card.score - 1, 0)
-                print("Wrong answer. Try again, or type 's' to skip, 'q' to quit.")
+#make class when I need more than one window
+class App(tk.Tk):
+    def __init__(self):
+        super().__init__()
         
-            if quit_flag:
-                break
-            
-        if quit_flag:
-            break
+        #creating all the widgets
+        self.current_card = 0
+        self.user_score = 0
+        self.flashcards = flashcards
+        self.skipped = skipped_cards
+        self.question_label = tk.Label(self,text="")
+        self.answer_entry = tk.Entry(self)
+        self.submit_button = tk.Button(self,text="Submit",command=self.submit_answer)
+        self.skip_button = tk.Button(self,text="Skip",command = self.skip_card)
+        self.score_label = tk.Label(self,text="Score: 0")
+        self.feedback_label = tk.Label(self,text="")
+        self.retry_button = tk.Button(self,text="Redo",command = self.redo_skipped)
+        self.end_button = tk.Button(self,text="End Session", command = self.end_session)
         
-    return user_score, cards_won, cards_skipped, skipped
-
-user_score, cards_won, cards_skipped,skipped = quiz(flashcards,user_score)    
-
-while cards_skipped > 0:
-        redo = input("Redo skipped cards? y/n: ").strip().lower()
-        if redo == 'n':
-            print("Thanks for using this app!")
-            break
-        elif redo == 'y':
-            user_score, cards_won, cards_skipped, skipped = quiz(skipped, user_score)
-            break
+        self.TopFrame = tk.Frame(self)
+        self.MiddleFrame = tk.Frame(self)
+        self.BottomFrame = tk.Frame(self)
+        
+        self.question_label.grid(row=0, column=0, columnspan=2, pady=30)
+        self.answer_entry.grid(row=1, column=0, columnspan=2, pady=10)
+        self.feedback_label.grid(row=2, column=0, columnspan=2, pady=10)
+        self.submit_button.grid(row=2, column=0, padx=5, pady=10)
+        self.skip_button.grid(row=2, column=1, padx=5, pady=10)
+        self.retry_button.grid(row=3,column=4,pady=12)
+        self.score_label.grid(row=3, column=0, columnspan=2, pady=10)
+        self.end_button.grid(row=4, column=0, columnspan=2, pady=10)
+        
+        self.show_question()
+        
+        
+    def submit_answer(self):
+        self.submit_button.config(state="normal")
+        self.skip_button.config(state="normal")
+        user_answer =  self.answer_entry.get()
+        correct_answer = self.flashcards[self.current_card].getanswer()
+        score = self.flashcards[self.current_card].getscore()
+        Ua = nlp(user_answer)
+        Ca = nlp(correct_answer)
+        if Ua.similarity(Ca) >= 0.75:
+            self.user_score += score
+            self.score_label.config(text=f"Score: {self.user_score}")
+            self.feedback_label.config(text= "That is correct!")
+            self.current_card += 1
         else:
-            print("Invalid input, please type y or n.")
+            self.feedback_label.config(text= "That is incorrect!")
+            score -= 1
+        self.answer_entry.delete(0,tk.END)
+        self.show_question()
             
-print("That's the end!! Your final score is ", user_score)
-print("You got",cards_won,"cards correct while skipping",cards_skipped,"cards.")
+                
+           
+    def skip_card(self):
+        skipped_cards.append(self.flashcards[self.current_card])
+        self.current_card += 1
+        self.answer_entry.delete(0,tk.END)
+        self.show_question()
+    
+    def redo_skipped(self):
+        if self.current_card > len(self.flashcards) and len(skipped_cards) > 0:
+            self.flashcards = skipped_cards
+            self.show_question()
+        else:
+            self.feedback_label.config(text="You can only redo skipped questions as the end of the quiz.")
+        
+            
+        
+    
+    def end_session(self):
+        self.question_label.config(text="Quiz complete! Good luck studying!")
+        self.submit_button.config(state="disabled")
+        self.skip_button.config(state="disabled")
+        self.feedback_label.config(text="")
+        self.retry_button.config(state="disabled")
+       
+    
+    def show_question(self):
+        if self.current_card < len(self.flashcards):
+            self.question_label.config(text=self.flashcards[self.current_card].getquestion())
+        else:
+            self.question_label.config(text="Quiz complete!")
+            self.submit_button.config(state="disabled")
+            self.skip_button.config(state="disabled")
+        
+        
+    
+    
+    
+        
+
+     
+#setting up main window
+main_w = App()
+main_w.title('CogniHelp')
+main_w.configure(background="#e298f6")
+
+
+
+#centering window on launch
+main_w.geometry('600x600')
+window_height = 500
+window_width = 900
+screen_width = main_w.winfo_screenwidth()
+screen_height = main_w.winfo_screenheight()
+x_cordinate = int((screen_width/2) - (window_width/2))
+y_cordinate = int((screen_height/2) - (window_height/2))
+main_w.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
+
+
+main_w.mainloop()
+
+
+
 
 
 
