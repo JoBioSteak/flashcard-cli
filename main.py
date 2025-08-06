@@ -43,34 +43,48 @@ random.shuffle(flashcards)
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        
-        #creating all the widgets
+
         self.current_card = 0
         self.user_score = 0
         self.flashcards = flashcards
         self.skipped = skipped_cards
-        self.question_label = tk.Label(self,text="")
-        self.answer_entry = tk.Entry(self)
-        self.submit_button = tk.Button(self,text="Submit",command=self.submit_answer)
-        self.skip_button = tk.Button(self,text="Skip",command = self.skip_card)
-        self.score_label = tk.Label(self,text="Score: 0")
-        self.feedback_label = tk.Label(self,text="")
-        self.retry_button = tk.Button(self,text="Redo",command = self.redo_skipped)
-        self.end_button = tk.Button(self,text="End Session", command = self.end_session)
-        
-        self.TopFrame = tk.Frame(self)
-        self.MiddleFrame = tk.Frame(self)
-        self.BottomFrame = tk.Frame(self)
-        
-        self.question_label.grid(row=0, column=0, columnspan=2, pady=30)
-        self.answer_entry.grid(row=1, column=0, columnspan=2, pady=10)
-        self.feedback_label.grid(row=2, column=0, columnspan=2, pady=10)
-        self.submit_button.grid(row=2, column=0, padx=5, pady=10)
-        self.skip_button.grid(row=2, column=1, padx=5, pady=10)
-        self.retry_button.grid(row=3,column=4,pady=12)
-        self.score_label.grid(row=3, column=0, columnspan=2, pady=10)
-        self.end_button.grid(row=4, column=0, columnspan=2, pady=10)
-        
+
+        #top frame
+        top_frame = tk.Frame(self, bg="#ea9eff")
+        top_frame.pack(pady=20)
+
+        self.question_label = tk.Label(top_frame, text="", background="#fffb04", font=("Helvetica", 16), wraplength=600)
+        self.question_label.pack()
+
+        self.feedback_label = tk.Label(top_frame, text="", background="#777777", font=("Arial", 12))
+        self.feedback_label.pack(pady=5)
+
+        #middle frame
+        middle_frame = tk.Frame(self, bg="#ea9eff")
+        middle_frame.pack(pady=10)
+
+        self.answer_entry = tk.Entry(middle_frame, background="#DCC8FE", width=40, font=("Arial", 12))
+        self.answer_entry.pack(side="left", padx=5)
+
+        self.submit_button = tk.Button(middle_frame, text="Submit", command=self.submit_answer, background="#838383")
+        self.submit_button.pack(side="left", padx=5)
+
+        self.skip_button = tk.Button(middle_frame, text="Skip", command=self.skip_card, background="#2F7B15")
+        self.skip_button.pack(side="left", padx=5)
+
+        #bottom frame
+        bottom_frame = tk.Frame(self, bg="#ea9eff")
+        bottom_frame.pack(pady=30)
+
+        self.score_label = tk.Label(bottom_frame, text="Score: 0", background="#04c5ff", font=("Arial", 12))
+        self.score_label.pack(pady=5)
+
+        self.retry_button = tk.Button(bottom_frame, text="Redo", command=self.redo_skipped, background="#ff8000")
+        self.retry_button.pack(pady=5)
+
+        self.end_button = tk.Button(bottom_frame, text="End Session", command=self.end_session, background="#ff0000")
+        self.end_button.pack(pady=5)
+
         self.show_question()
         
         
@@ -128,16 +142,12 @@ class App(tk.Tk):
             self.skip_button.config(state="disabled")
         
         
-    
-    
-    
-        
 
      
 #setting up main window
 main_w = App()
 main_w.title('CogniHelp')
-main_w.configure(background="#e298f6")
+main_w.configure(background="#ea9eff")
 
 
 
