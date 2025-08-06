@@ -75,4 +75,11 @@ Right now, that's making a nice GUI for the project instead of using the command
 2) score + flashcard (skipped and remaining) tracker
 3) category selector (only have biochem for now but future proofing and such) button
 4) buttons to skip question, retry question, end quiz, redo skipped questions
+
+06/07/2025. 
+..........time-management is going to be the death of me. On a related note, finally got the GUI to look nice (ignore all the empty  space when you go full screen). Tkinter is a pain but I got the logic working which is the most important thing. The next step would be:
+1) allowing users to create cards with existing or new categories
+2) allowing users to choose which categories they want to be tested on
+
+Let's get to it!
 I think that's it for now. Well then, time to learn how to code with tkinter!
